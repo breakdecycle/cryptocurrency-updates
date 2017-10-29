@@ -114,7 +114,8 @@ function BTC_realtimedata() {
   var BitAv = UrlFetchApp.fetch("https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD").getContentText();
   var CoinDesk = UrlFetchApp.fetch("https://api.coindesk.com/v1/bpi/currentprice/MYR.json").getContentText();
   var Poloniex = UrlFetchApp.fetch("https://poloniex.com/public?command=returnTicker").getContentText();
-  var polo = Poloniex.substring(Poloniex.indexOf("USDT_BTC"), Poloniex.indexOf("USDT_BTC")+400)
+  var polo = Poloniex.substring(Poloniex.indexOf("USDT_BTC"), Poloniex.indexOf("USDT_BTC")+400);
+  var bittrex = UrlFetchApp.fetch('https://bittrex.com/api/v1.1/public/getmarkets').getContentText();
 
   writeToCell(source, 'B2', BitX);
   writeToCell(source, 'B3', BitAv);
